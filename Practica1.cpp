@@ -28,7 +28,7 @@ int main()
     if(value == 0)
         resul = "Aguila";
     else
-        resul = "Sello";
+        resul = "Sol";
 
     cout << "Resultado: " << resul << endl;
 

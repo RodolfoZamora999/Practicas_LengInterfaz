@@ -8,8 +8,7 @@ Repositorio: https://github.com/RodolfoZamora999/Practicas_LengInterfaz
 Fecha de revisión: 16/10/2020
 
 Objetivo del programa:
-Es un hecho bien conocido que cada vez que se arroja una moneda al aire, hay una probabilidad de 50-50 que caiga "sol".
-Escribir un programa para imprimir una secuencia caracteristicas de 100 tiros (es decir, sol, aguila, sol, aguila, sol)
+Hacer que la computadora simule los tiros de seis monedas 1,000 veces e imprimir la distribución que resulte.
 */
 
 #include <iostream>
@@ -20,21 +19,25 @@ int main()
 {
     string resul;
 
+    int cantidad_sol = 0;
+    int cantidad_aguila = 0;
+
     //Configuración del generador
     srand((unsigned)time(0));
 
     //Generación de un número pseudoaleatorio
-    for(int i = 0; i < 100; i++)
+    for(int i = 0; i < 1000; i++)
     {
         int value = rand() % 2;
 
         if(value == 0)
-            resul = "Aguila";
+            ++cantidad_aguila;
         else
-            resul = "Sol";
-
-        cout <<"Tiro: " << (i + 1) << " Resultado: " << resul << endl;
+            ++cantidad_sol;
     }
+
+    cout << "Resultado de 1000 tiros: " << endl;
+    cout << "Cant.Aguila: " << cantidad_aguila << "  Cant.Sol: " << cantidad_sol << endl;
 
     return 0;
 }
